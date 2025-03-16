@@ -1,3 +1,4 @@
+import time
 from turtle import Turtle
 import random
 import degrees
@@ -7,6 +8,7 @@ class Ball(Turtle):
         super().__init__()
         self.shape("circle")
         self.penup()
+        self.shapesize(1, 1)
         self.color("purple")
         self.current_direction = random.choice(degrees.directions['start'])
         self.reset_direction()

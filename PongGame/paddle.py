@@ -1,5 +1,5 @@
 from turtle import Turtle
-MOVEMENT_SPEED = 40
+MOVEMENT_SPEED = 70
 
 class Paddle(Turtle):
     def __init__(self):
