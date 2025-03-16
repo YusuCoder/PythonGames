@@ -8,7 +8,6 @@ class Ball(Turtle):
         self.shape("circle")
         self.penup()
         self.color("purple")
-        self.hit_wall = False
         self.current_direction = random.choice(degrees.directions['start'])
         self.reset_direction()
 
