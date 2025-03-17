@@ -1,5 +1,6 @@
-from turtle import Turtle
 import random
+
+import ball
 from ball import Ball
 import degrees
 PADDLE_HEIGHT = 110
@@ -50,8 +51,11 @@ class WallCollisions:
         # Collision check with Left Paddle
         if 700 <= ball_x <= 720 and (left_paddle + PADDLE_HEIGHT / 2 >= ball_y >= left_paddle - PADDLE_HEIGHT / 2):
             self.ball.setheading(self.ball.towards(random.choice(degrees.headings['left_heading'])))
-
+            if ball.SPEED <= ball.MAX_SPEED:
+                ball.SPEED += 1
         # Collision check with Right Paddle
         if -720 <= ball_x <= -700 and (
                 right_paddle + PADDLE_HEIGHT / 2 >= ball_y >= right_paddle - PADDLE_HEIGHT / 2):
             self.ball.setheading(self.ball.towards(random.choice(degrees.headings['right_heading'])))
+            if ball.SPEED <= ball.MAX_SPEED:
+                ball.SPEED += 1

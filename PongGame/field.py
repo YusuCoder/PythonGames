@@ -1,4 +1,5 @@
 from turtle import Turtle
+import ball
 
 class Field:
     def __init__(self, screen):
@@ -8,6 +9,7 @@ class Field:
         self.draw_pos = [-70, 70]
         self.score = Turtle()
         self.score1 = Turtle()
+        self.ball = ball
         self.lis_scores = [self.score, self.score1]
 
     def draw_line(self):
@@ -36,5 +38,6 @@ class Field:
         for i in range(2):
             self.lis_scores[i].clear()
             self.lis_scores[i].goto(self.draw_pos[i], 310)
+            self.ball.SPEED = 10
             self.lis_scores[i].write(self.scores[i], align="center", font=("OCR A Extended", 50, "bold"))
 

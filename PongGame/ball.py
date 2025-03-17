@@ -3,6 +3,9 @@ from turtle import Turtle
 import random
 import degrees
 
+SPEED = 10
+MAX_SPEED = 20
+
 class Ball(Turtle):
     def __init__(self):
         super().__init__()
@@ -15,8 +18,9 @@ class Ball(Turtle):
 
     def reset_direction(self):
         self.goto(0, 0)
+
         self.setheading(self.current_direction)
 
     def move_ball(self):
         self.speed(1)
-        self.forward(10)
+        self.forward(SPEED)
